@@ -1,6 +1,10 @@
-# SlipStream - Kafka-Based Real-Time Anomaly Detector
+# ⚡️SlipStream - Kafka-Based Real-Time Anomaly Detector
 
 SlipStream is a high-performance, real-time anomaly detection system built in Java for detecting fraud and anomalies in streaming transaction data using Apache Kafka and machine learning.
+
+## 🎥 Demo
+![SlipStreamDemo](https://github.com/user-attachments/assets/118edb6b-9f98-43aa-b474-a116b61c531e)
+
 
 ## Features
 
