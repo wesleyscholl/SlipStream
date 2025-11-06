@@ -1,7 +1,9 @@
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/stream/AnomalyDetectionStreams.java
+/Users/wscholl/SlipStream/src/main/java/com/slipstream/demo/AnomalyResultConsumer.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/SlipStreamApplication.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/config/KafkaConfig.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/model/AnomalyResult.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/detector/StatisticalAnomalyDetector.java
+/Users/wscholl/SlipStream/src/main/java/com/slipstream/demo/TransactionGenerator.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/model/TransactionEvent.java
 /Users/wscholl/SlipStream/src/main/java/com/slipstream/detector/AnomalyDetector.java

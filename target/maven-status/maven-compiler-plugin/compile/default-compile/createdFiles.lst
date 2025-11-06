@@ -1,10 +1,12 @@
-com/slipstream/model/TransactionEvent.class
 com/slipstream/model/TransactionEvent$Location.class
 com/slipstream/detector/AnomalyDetector.class
 com/slipstream/detector/StatisticalAnomalyDetector$1.class
+com/slipstream/demo/AnomalyResultConsumer.class
+com/slipstream/model/AnomalyResult$AnomalyType.class
+com/slipstream/model/TransactionEvent.class
 com/slipstream/detector/StatisticalAnomalyDetector.class
+com/slipstream/demo/TransactionGenerator.class
 com/slipstream/config/KafkaConfig.class
 com/slipstream/stream/AnomalyDetectionStreams.class
-com/slipstream/model/AnomalyResult$AnomalyType.class
 com/slipstream/SlipStreamApplication.class
 com/slipstream/model/AnomalyResult.class

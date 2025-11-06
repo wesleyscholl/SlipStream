@@ -34,6 +34,31 @@ SlipStream is a high-performance, real-time anomaly detection system built in Ja
 - **JUnit 5**: Testing framework
 - **Maven**: Build and dependency management
 
+## 🎬 Visual Demo
+
+**Perfect for presentations and recording!**
+
+Experience SlipStream's real-time anomaly detection with our interactive visual demo:
+
+```bash
+# Quick visual demo (no Kafka required)
+./visual-demo.sh
+
+# Full interactive demo (with Kafka)
+./demo.sh
+```
+
+This launches a complete demonstration with:
+- 🌈 **Colorful real-time transaction streams** 
+- 🚨 **Live anomaly alerts with visual highlighting**
+- 📊 **Anomaly scoring and confidence levels**
+- 🎯 **Multiple anomaly types** (high amount, velocity, location, time)
+
+**Demo Resources:**
+- 📖 [Complete Demo Guide](DEMO.md) - Setup and customization instructions
+- 📺 [Visual Output Examples](DEMO_OUTPUT.md) - See exactly what the demo looks like
+- 🎬 [Recording Tips](DEMO.md#-recording-tips) - Perfect your demo recordings
+
 ## Quick Start
 
 ### Prerequisites
@@ -41,6 +66,7 @@ SlipStream is a high-performance, real-time anomaly detection system built in Ja
 - Java 17 or higher
 - Apache Kafka 3.6+ running on localhost:9092
 - Maven 3.6+
+- Docker & Docker Compose (for easy Kafka setup)
 
 ### 1. Build the Project
 
