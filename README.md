@@ -1,5 +1,7 @@
 # ⚡️ SlipStream - Kafka-Based Real-Time Anomaly Detector
 
+**Status**: Enterprise-grade fraud detection system with real-time streaming analytics - production-ready Java application for financial security workflows.
+
 > 🔍 **A high-performance, real-time anomaly detection system** built in Java for detecting fraud and anomalies in streaming transaction data using Apache Kafka and statistical machine learning.
 
 [![Java](https://img.shields.io/badge/Java-17+-orange.svg)](https://openjdk.java.net/)

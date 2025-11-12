@@ -1,6 +1,8 @@
 package com.slipstream;
 
+import com.slipstream.config.EnvironmentVariableProvider;
 import com.slipstream.config.KafkaConfig;
+import com.slipstream.config.SystemEnvironmentVariableProvider;
 import com.slipstream.stream.AnomalyDetectionStreams;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +22,14 @@ public class SlipStreamApplication {
     private final KafkaConfig kafkaConfig;
     private final AnomalyDetectionStreams anomalyStreams;
     private final ScheduledExecutorService scheduler;
+    private final EnvironmentVariableProvider environmentProvider;
 
     public SlipStreamApplication() {
+        this(new SystemEnvironmentVariableProvider());
+    }
+
+    public SlipStreamApplication(EnvironmentVariableProvider environmentProvider) {
+        this.environmentProvider = environmentProvider;
         this.kafkaConfig = loadConfiguration();
         this.anomalyStreams = new AnomalyDetectionStreams(kafkaConfig);
         this.scheduler = Executors.newScheduledThreadPool(1);
@@ -155,27 +163,27 @@ public class SlipStreamApplication {
         KafkaConfig config = new KafkaConfig();
         
         // Override with environment variables if present
-        String bootstrapServers = System.getenv("KAFKA_BOOTSTRAP_SERVERS");
+        String bootstrapServers = environmentProvider.getenv("KAFKA_BOOTSTRAP_SERVERS");
         if (bootstrapServers != null) {
             config.setBootstrapServers(bootstrapServers);
         }
         
-        String inputTopic = System.getenv("KAFKA_INPUT_TOPIC");
+        String inputTopic = environmentProvider.getenv("KAFKA_INPUT_TOPIC");
         if (inputTopic != null) {
             config.setInputTopic(inputTopic);
         }
         
-        String outputTopic = System.getenv("KAFKA_OUTPUT_TOPIC");
+        String outputTopic = environmentProvider.getenv("KAFKA_OUTPUT_TOPIC");
         if (outputTopic != null) {
             config.setOutputTopic(outputTopic);
         }
         
-        String alertsTopic = System.getenv("KAFKA_ALERTS_TOPIC");
+        String alertsTopic = environmentProvider.getenv("KAFKA_ALERTS_TOPIC");
         if (alertsTopic != null) {
             config.setAlertsTopic(alertsTopic);
         }
         
-        String numThreads = System.getenv("KAFKA_NUM_THREADS");
+        String numThreads = environmentProvider.getenv("KAFKA_NUM_THREADS");
         if (numThreads != null) {
             try {
                 config.setNumStreamThreads(Integer.parseInt(numThreads));
@@ -184,7 +192,7 @@ public class SlipStreamApplication {
             }
         }
         
-        String stateDir = System.getenv("KAFKA_STATE_DIR");
+        String stateDir = environmentProvider.getenv("KAFKA_STATE_DIR");
         if (stateDir != null) {
             config.setStateDir(stateDir);
         }

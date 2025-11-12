@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Test set: com.slipstream.model.TransactionEventTest
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.134 s <<< FAILURE! -- in com.slipstream.model.TransactionEventTest
+com.slipstream.model.TransactionEventTest.testJsonDeserialization -- Time elapsed: 0.023 s <<< ERROR!
+java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerBase.resolve(BeanDeserializerBase.java:561)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:326)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:273)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:173)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5036)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4906)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3848)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3816)
+	at com.slipstream.model.TransactionEventTest.testJsonDeserialization(TransactionEventTest.java:76)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+

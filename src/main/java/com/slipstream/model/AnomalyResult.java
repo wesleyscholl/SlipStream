@@ -1,10 +1,6 @@
 package com.slipstream.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import java.time.LocalDateTime;
 import java.util.Map;
@@ -32,8 +28,6 @@ public class AnomalyResult {
     private AnomalyType anomalyType;
     
     @JsonProperty("detected_at")
-    @JsonSerialize(using = LocalDateTimeSerializer.class)
-    @JsonDeserialize(using = LocalDateTimeDeserializer.class)
     private LocalDateTime detectedAt;
     
     @JsonProperty("original_transaction")

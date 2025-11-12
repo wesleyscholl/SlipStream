@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.19" tests="8" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/wscholl/SlipStream/target/test-classes:/Users/wscholl/SlipStream/target/classes:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams/3.6.1/kafka-streams-3.6.1.jar:/Users/wscholl/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-clients/3.6.1/kafka-clients-3.6.1.jar:/Users/wscholl/.m2/repository/com/github/luben/zstd-jni/1.5.5-1/zstd-jni-1.5.5-1.jar:/Users/wscholl/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/wscholl/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/wscholl/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-configuration2/2.9.0/commons-configuration2-2.9.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/wscholl/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/wscholl/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/wscholl/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/wscholl/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/wscholl/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.6.1/kafka-streams-test-utils-3.6.1.jar:/Users/wscholl/.m2/repository/org/testcontainers/junit-jupiter/1.19.7/junit-jupiter-1.19.7.jar:/Users/wscholl/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/wscholl/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/wscholl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/wscholl/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/wscholl/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/wscholl/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/wscholl/.m2/repository/org/testcontainers/kafka/1.19.7/kafka-1.19.7.jar:/Users/wscholl/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="net.bytebuddy.experimental" value="true"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/wscholl/SlipStream/target/surefire/surefirebooter-20251107150315792_3.jar /Users/wscholl/SlipStream/target/surefire 2025-11-07T15-03-15_745-jvmRun1 surefire-20251107150315792_1tmp surefire_0-20251107150315792_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="test" value="EnhancedMLAnomalyDetectorTest"/>
+    <property name="surefire.test.class.path" value="/Users/wscholl/SlipStream/target/test-classes:/Users/wscholl/SlipStream/target/classes:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams/3.6.1/kafka-streams-3.6.1.jar:/Users/wscholl/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-clients/3.6.1/kafka-clients-3.6.1.jar:/Users/wscholl/.m2/repository/com/github/luben/zstd-jni/1.5.5-1/zstd-jni-1.5.5-1.jar:/Users/wscholl/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/wscholl/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.2/jackson-databind-2.17.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.2/jackson-core-2.17.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.2/jackson-datatype-jsr310-2.17.2.jar:/Users/wscholl/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-configuration2/2.9.0/commons-configuration2-2.9.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/wscholl/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/wscholl/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/wscholl/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/wscholl/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/wscholl/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.6.1/kafka-streams-test-utils-3.6.1.jar:/Users/wscholl/.m2/repository/org/testcontainers/junit-jupiter/1.19.7/junit-jupiter-1.19.7.jar:/Users/wscholl/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/wscholl/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/wscholl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/wscholl/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/wscholl/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/wscholl/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/wscholl/.m2/repository/org/testcontainers/kafka/1.19.7/kafka-1.19.7.jar:/Users/wscholl/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/wscholl"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-09-16"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/wscholl/SlipStream"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/wscholl/SlipStream/target/surefire/surefirebooter-20251107150315792_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25"/>
+    <property name="user.name" value="wscholl"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.7.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/wscholl/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/j0/3_bbch6524dbn0cprjcxbqw40000gp/T/"/>
+    <property name="java.version" value="25"/>
+    <property name="user.dir" value="/Users/wscholl/SlipStream"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/wscholl/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="25"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testModelTraining" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.143">
+    <system-out><![CDATA[15:03:16,236 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.14
+15:03:16,236 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - No custom configurators were discovered as a service.
+15:03:16,236 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+15:03:16,236 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+15:03:16,237 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+15:03:16,237 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+15:03:16,238 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 1 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+15:03:16,238 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:03:16,239 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+15:03:16,239 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+15:03:16,240 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/wscholl/SlipStream/target/classes/logback.xml]
+15:03:16,304 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [CONSOLE]
+15:03:16,304 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+15:03:16,306 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:03:16,320 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+15:03:16,320 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+15:03:16,322 |-WARN in ch.qos.logback.core.model.processor.ImplicitModelHandler - Ignoring unknown property [maxFileSize] in [ch.qos.logback.core.rolling.TimeBasedRollingPolicy]
+15:03:16,324 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1899600175 - setting totalSizeCap to 1 GB
+15:03:16,325 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1899600175 - Will use gz compression
+15:03:16,325 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@1899600175 - Will use the pattern logs/slipstream.%d{yyyy-MM-dd}.%i.log for the active file
+15:03:16,337 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern 'logs/slipstream.%d{yyyy-MM-dd}.%i.log.gz'.
+15:03:16,337 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+15:03:16,339 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to 2025-11-07T20:03:16.339Z
+15:03:16,339 |-ERROR in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Filename pattern [logs/slipstream.%d{yyyy-MM-dd}.%i.log.gz] contains an integer token converter, i.e. %i, INCOMPATIBLE with this configuration. Remove it.
+15:03:16,339 |-WARN in c.q.l.core.rolling.TimeBasedRollingPolicy@1899600175 - Subcomponent did not start. TimeBasedRollingPolicy will not start.
+15:03:16,339 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+15:03:16,340 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - TriggeringPolicy has not started. RollingFileAppender will not start
+15:03:16,340 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.slipstream] to INFO
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [com.slipstream] to false
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[com.slipstream]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[com.slipstream]
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.streams] to INFO
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.apache.kafka.streams] to false
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[org.apache.kafka.streams]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[org.apache.kafka.streams]
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.clients] to WARN
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.apache.kafka.clients] to false
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[org.apache.kafka.clients]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[org.apache.kafka.clients]
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [smile] to INFO
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [smile] to false
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[smile]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[smile]
+15:03:16,341 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[ROOT]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+15:03:16,341 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@387a8303 - End of configuration.
+15:03:16,341 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@28cda624 - Registering current configuration as safe fallback point
+15:03:16,341 |-INFO in ch.qos.logback.classic.util.ContextInitializer@47caedad - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 102 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+15:03:16.350 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.357 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testBehavioralProfiling" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.004">
+    <system-out><![CDATA[15:03:16.362 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.363 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testFeatureExtraction" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.001">
+    <system-out><![CDATA[15:03:16.367 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.368 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testVelocityDetection" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.002">
+    <system-out><![CDATA[15:03:16.369 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.370 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testAdaptiveThresholds" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.001">
+    <system-out><![CDATA[15:03:16.371 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.372 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testAnomalyDetectionAfterTraining" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.003">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at com.slipstream.detector.EnhancedMLAnomalyDetectorTest.testAnomalyDetectionAfterTraining(EnhancedMLAnomalyDetectorTest.java:102)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[15:03:16.373 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+15:03:16.373 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Enhanced ML model is now trained with 50 samples
+]]></system-out>
+  </testcase>
+  <testcase name="testDetectorInitialization" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.001">
+    <system-out><![CDATA[15:03:16.377 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+]]></system-out>
+  </testcase>
+  <testcase name="testInitialDetectionBeforeTraining" classname="com.slipstream.detector.EnhancedMLAnomalyDetectorTest" time="0.001">
+    <system-out><![CDATA[15:03:16.378 [main] INFO  c.s.d.EnhancedMLAnomalyDetector - Initialized Enhanced ML Anomaly Detector with threshold 0.7
+]]></system-out>
+  </testcase>
+</testsuite>

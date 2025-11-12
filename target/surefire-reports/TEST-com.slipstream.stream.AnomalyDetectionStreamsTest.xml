@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.863" tests="16" errors="2" skipped="0" failures="4">
+  <properties>
+    <property name="java.specification.version" value="25"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/wscholl/SlipStream/target/test-classes:/Users/wscholl/SlipStream/target/classes:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams/3.6.1/kafka-streams-3.6.1.jar:/Users/wscholl/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-clients/3.6.1/kafka-clients-3.6.1.jar:/Users/wscholl/.m2/repository/com/github/luben/zstd-jni/1.5.5-1/zstd-jni-1.5.5-1.jar:/Users/wscholl/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/wscholl/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.16.1/jackson-datatype-jsr310-2.16.1.jar:/Users/wscholl/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-configuration2/2.9.0/commons-configuration2-2.9.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/wscholl/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/wscholl/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/wscholl/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/wscholl/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/wscholl/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.6.1/kafka-streams-test-utils-3.6.1.jar:/Users/wscholl/.m2/repository/org/testcontainers/junit-jupiter/1.19.7/junit-jupiter-1.19.7.jar:/Users/wscholl/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/wscholl/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/wscholl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/wscholl/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/wscholl/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/wscholl/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/wscholl/.m2/repository/org/testcontainers/kafka/1.19.7/kafka-1.19.7.jar:/Users/wscholl/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:"/>
+    <property name="java.vm.vendor" value="Homebrew"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="net.bytebuddy.experimental" value="true"/>
+    <property name="java.vendor.url" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="user.timezone" value="America/New_York"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="25"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/wscholl/SlipStream/target/surefire/surefirebooter-20251107141129025_3.jar /Users/wscholl/SlipStream/target/surefire 2025-11-07T14-11-28_896-jvmRun1 surefire-20251107141129025_1tmp surefire_0-20251107141129025_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/wscholl/SlipStream/target/test-classes:/Users/wscholl/SlipStream/target/classes:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams/3.6.1/kafka-streams-3.6.1.jar:/Users/wscholl/.m2/repository/org/rocksdb/rocksdbjni/7.9.2/rocksdbjni-7.9.2.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.13.5/jackson-annotations-2.13.5.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-clients/3.6.1/kafka-clients-3.6.1.jar:/Users/wscholl/.m2/repository/com/github/luben/zstd-jni/1.5.5-1/zstd-jni-1.5.5-1.jar:/Users/wscholl/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/Users/wscholl/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-math3/3.6.1/commons-math3-3.6.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.1/jackson-databind-2.16.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.1/jackson-core-2.16.1.jar:/Users/wscholl/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.16.1/jackson-datatype-jsr310-2.16.1.jar:/Users/wscholl/.m2/repository/org/slf4j/slf4j-api/2.0.12/slf4j-api-2.0.12.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar:/Users/wscholl/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-configuration2/2.9.0/commons-configuration2-2.9.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-text/1.10.0/commons-text-1.10.0.jar:/Users/wscholl/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.2/junit-jupiter-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.2/junit-jupiter-api-5.10.2.jar:/Users/wscholl/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-commons/1.10.2/junit-platform-commons-1.10.2.jar:/Users/wscholl/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.2/junit-jupiter-params-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.2/junit-jupiter-engine-5.10.2.jar:/Users/wscholl/.m2/repository/org/junit/platform/junit-platform-engine/1.10.2/junit-platform-engine-1.10.2.jar:/Users/wscholl/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/wscholl/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy/1.14.12/byte-buddy-1.14.12.jar:/Users/wscholl/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.12/byte-buddy-agent-1.14.12.jar:/Users/wscholl/.m2/repository/org/apache/kafka/kafka-streams-test-utils/3.6.1/kafka-streams-test-utils-3.6.1.jar:/Users/wscholl/.m2/repository/org/testcontainers/junit-jupiter/1.19.7/junit-jupiter-1.19.7.jar:/Users/wscholl/.m2/repository/org/testcontainers/testcontainers/1.19.7/testcontainers-1.19.7.jar:/Users/wscholl/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/wscholl/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:/Users/wscholl/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/wscholl/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/wscholl/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-api/3.3.6/docker-java-api-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.6/docker-java-transport-zerodep-3.3.6.jar:/Users/wscholl/.m2/repository/com/github/docker-java/docker-java-transport/3.3.6/docker-java-transport-3.3.6.jar:/Users/wscholl/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/wscholl/.m2/repository/org/testcontainers/kafka/1.19.7/kafka-1.19.7.jar:/Users/wscholl/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/wscholl"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-09-16"/>
+    <property name="java.home" value="/opt/homebrew/Cellar/openjdk/25/libexec/openjdk.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/wscholl/SlipStream"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="apple.awt.application.name" value="ForkedBooter"/>
+    <property name="surefire.real.class.path" value="/Users/wscholl/SlipStream/target/surefire/surefirebooter-20251107141129025_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="25"/>
+    <property name="user.name" value="wscholl"/>
+    <property name="stdout.encoding" value="UTF-8"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="15.7.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Homebrew"/>
+    <property name="localRepository" value="/Users/wscholl/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
+    <property name="java.io.tmpdir" value="/var/folders/j0/3_bbch6524dbn0cprjcxbqw40000gp/T/"/>
+    <property name="java.version" value="25"/>
+    <property name="user.dir" value="/Users/wscholl/SlipStream"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/wscholl/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="UTF-8"/>
+    <property name="java.vendor" value="Homebrew"/>
+    <property name="java.vm.version" value="25"/>
+    <property name="stdin.encoding" value="UTF-8"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="java.class.version" value="69.0"/>
+  </properties>
+  <testcase name="testSerializeAnomalyResultWithNullResult" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.746">
+    <failure message="expected: &lt;null&gt; but was: &lt;{&quot;anomaly&quot;:false,&quot;transaction_id&quot;:null,&quot;is_anomaly&quot;:false,&quot;anomaly_score&quot;:0.0,&quot;confidence&quot;:0.0,&quot;anomaly_type&quot;:null,&quot;detected_at&quot;:null,&quot;original_transaction&quot;:null,&quot;features_used&quot;:{},&quot;reason&quot;:null}&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <null> but was: <{"anomaly":false,"transaction_id":null,"is_anomaly":false,"anomaly_score":0.0,"confidence":0.0,"anomaly_type":null,"detected_at":null,"original_transaction":null,"features_used":{},"reason":null}>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:50)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:35)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:30)
+	at org.junit.jupiter.api.Assertions.assertNull(Assertions.java:279)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResultWithNullResult(AnomalyDetectionStreamsTest.java:273)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[14:11:30,175 |-INFO in ch.qos.logback.classic.LoggerContext[default] - This is logback-classic version 1.4.14
+14:11:30,175 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - No custom configurators were discovered as a service.
+14:11:30,175 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - Trying to configure with ch.qos.logback.classic.joran.SerializedModelConfigurator
+14:11:30,175 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - Constructed configurator of type class ch.qos.logback.classic.joran.SerializedModelConfigurator
+14:11:30,175 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.scmo]
+14:11:30,175 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback.scmo]
+14:11:30,177 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - ch.qos.logback.classic.joran.SerializedModelConfigurator.configure() call lasted 1 milliseconds. ExecutionStatus=INVOKE_NEXT_IF_ANY
+14:11:30,177 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - Trying to configure with ch.qos.logback.classic.util.DefaultJoranConfigurator
+14:11:30,177 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - Constructed configurator of type class ch.qos.logback.classic.util.DefaultJoranConfigurator
+14:11:30,177 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Could NOT find resource [logback-test.xml]
+14:11:30,177 |-INFO in ch.qos.logback.classic.LoggerContext[default] - Found resource [logback.xml] at [file:/Users/wscholl/SlipStream/target/classes/logback.xml]
+14:11:30,226 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [CONSOLE]
+14:11:30,226 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.ConsoleAppender]
+14:11:30,229 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+14:11:30,235 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - Processing appender named [FILE]
+14:11:30,235 |-INFO in ch.qos.logback.core.model.processor.AppenderModelHandler - About to instantiate appender of type [ch.qos.logback.core.rolling.RollingFileAppender]
+14:11:30,237 |-WARN in ch.qos.logback.core.model.processor.ImplicitModelHandler - Ignoring unknown property [maxFileSize] in [ch.qos.logback.core.rolling.TimeBasedRollingPolicy]
+14:11:30,237 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@2130606983 - setting totalSizeCap to 1 GB
+14:11:30,238 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@2130606983 - Will use gz compression
+14:11:30,238 |-INFO in c.q.l.core.rolling.TimeBasedRollingPolicy@2130606983 - Will use the pattern logs/slipstream.%d{yyyy-MM-dd}.%i.log for the active file
+14:11:30,240 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - The date pattern is 'yyyy-MM-dd' from file name pattern 'logs/slipstream.%d{yyyy-MM-dd}.%i.log.gz'.
+14:11:30,240 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Roll-over at midnight.
+14:11:30,240 |-INFO in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Setting initial period to 2025-11-07T19:11:30.240Z
+14:11:30,240 |-ERROR in c.q.l.core.rolling.DefaultTimeBasedFileNamingAndTriggeringPolicy - Filename pattern [logs/slipstream.%d{yyyy-MM-dd}.%i.log.gz] contains an integer token converter, i.e. %i, INCOMPATIBLE with this configuration. Remove it.
+14:11:30,240 |-WARN in c.q.l.core.rolling.TimeBasedRollingPolicy@2130606983 - Subcomponent did not start. TimeBasedRollingPolicy will not start.
+14:11:30,240 |-INFO in ch.qos.logback.core.model.processor.ImplicitModelHandler - Assuming default type [ch.qos.logback.classic.encoder.PatternLayoutEncoder] for [encoder] property
+14:11:30,240 |-WARN in ch.qos.logback.core.rolling.RollingFileAppender[FILE] - TriggeringPolicy has not started. RollingFileAppender will not start
+14:11:30,240 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [com.slipstream] to INFO
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [com.slipstream] to false
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[com.slipstream]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[com.slipstream]
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.streams] to INFO
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.apache.kafka.streams] to false
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[org.apache.kafka.streams]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[org.apache.kafka.streams]
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [org.apache.kafka.clients] to WARN
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [org.apache.kafka.clients] to false
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[org.apache.kafka.clients]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[org.apache.kafka.clients]
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting level of logger [smile] to INFO
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.LoggerModelHandler - Setting additivity of logger [smile] to false
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[smile]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[smile]
+14:11:30,241 |-INFO in ch.qos.logback.classic.model.processor.RootLoggerModelHandler - Setting level of ROOT logger to INFO
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [CONSOLE] to Logger[ROOT]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.AppenderRefModelHandler - Attaching appender named [FILE] to Logger[ROOT]
+14:11:30,241 |-INFO in ch.qos.logback.core.model.processor.DefaultProcessor@5a2bd7c8 - End of configuration.
+14:11:30,241 |-INFO in ch.qos.logback.classic.joran.JoranConfigurator@7ca8d498 - Registering current configuration as safe fallback point
+14:11:30,241 |-INFO in ch.qos.logback.classic.util.ContextInitializer@65c86db8 - ch.qos.logback.classic.util.DefaultJoranConfigurator.configure() call lasted 64 milliseconds. ExecutionStatus=DO_NOT_INVOKE_NEXT_IF_ANY
+
+14:11:30.249 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.250 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testGetStateWithoutStart" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.002">
+    <system-out><![CDATA[14:11:30.291 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.291 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testConstructorWithDefaultDetector" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.001">
+    <system-out><![CDATA[14:11:30.293 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.293 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testStopWithoutStart" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.001">
+    <system-out><![CDATA[14:11:30.295 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.295 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testStopAfterMockStart" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.048">
+    <system-out><![CDATA[14:11:30.296 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.297 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+14:11:30.339 [main] INFO  c.s.stream.AnomalyDetectionStreams - Stopping Kafka Streams application...
+14:11:30.340 [main] INFO  c.s.stream.AnomalyDetectionStreams - Kafka Streams application stopped
+]]></system-out>
+  </testcase>
+  <testcase name="testParseTransactionWithInvalidJson" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.026">
+    <error message="Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field &apos;com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS&apos;" type="java.lang.NoSuchFieldError"><![CDATA[java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreams.parseTransaction(AnomalyDetectionStreams.java:139)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithInvalidJson(AnomalyDetectionStreamsTest.java:196)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></error>
+    <system-out><![CDATA[14:11:30.345 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.345 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testDetectAnomalySuccess" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.004">
+    <system-out><![CDATA[14:11:30.372 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: null
+14:11:30.373 [main] INFO  c.s.stream.AnomalyDetectionStreams - Anomaly detected: transaction=tx_123, score=0.8, type=unusual_amount
+]]></system-out>
+  </testcase>
+  <testcase name="testConstructorWithCustomDetector" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.001">
+    <system-out><![CDATA[14:11:30.375 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: MockDetector
+]]></system-out>
+  </testcase>
+  <testcase name="testSerializeAnomalyResult" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.004">
+    <failure message="expected: &lt;true&gt; but was: &lt;false&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResult(AnomalyDetectionStreamsTest.java:251)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[14:11:30.376 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.377 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testGetters" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.002">
+    <system-out><![CDATA[14:11:30.382 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: null
+]]></system-out>
+  </testcase>
+  <testcase name="testLogMetricsWithStatisticalDetector" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.003">
+    <system-out><![CDATA[14:11:30.383 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.383 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: Statistical
+14:11:30.384 [main] INFO  c.s.stream.AnomalyDetectionStreams - Streams state: RUNNING
+14:11:30.384 [main] INFO  c.s.stream.AnomalyDetectionStreams - Detector metrics - Global samples: 0, Model trained: false, Total transactions: 0, Users: 0
+]]></system-out>
+  </testcase>
+  <testcase name="testObjectMapperConfiguration" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.006">
+    <failure message="Unexpected exception thrown: java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field &apos;com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS&apos;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception thrown: java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testObjectMapperConfiguration(AnomalyDetectionStreamsTest.java:294)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.lambda$testObjectMapperConfiguration$0(AnomalyDetectionStreamsTest.java:298)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 6 more
+]]></failure>
+    <system-out><![CDATA[14:11:30.387 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.387 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testDetectAnomalyWithException" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.002">
+    <system-out><![CDATA[14:11:30.393 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: null
+14:11:30.393 [main] ERROR c.s.stream.AnomalyDetectionStreams - Error during anomaly detection for transaction tx_123: Detection failed
+]]></system-out>
+  </testcase>
+  <testcase name="testOnlineLearningUpdateModel" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.004">
+    <failure message="&#10;Wanted but not invoked:&#10;anomalyDetector.supportsOnlineLearning();&#10;-&gt; at com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel(AnomalyDetectionStreamsTest.java:285)&#10;&#10;However, there was exactly 1 interaction with this mock:&#10;anomalyDetector.getDetectorName();&#10;-&gt; at com.slipstream.stream.AnomalyDetectionStreams.&lt;init&gt;(AnomalyDetectionStreams.java:51)&#10;&#10;" type="Wanted but not invoked"><![CDATA[Wanted but not invoked:
+anomalyDetector.supportsOnlineLearning();
+-> at com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel(AnomalyDetectionStreamsTest.java:285)
+
+However, there was exactly 1 interaction with this mock:
+anomalyDetector.getDetectorName();
+-> at com.slipstream.stream.AnomalyDetectionStreams.<init>(AnomalyDetectionStreams.java:51)
+
+
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel(AnomalyDetectionStreamsTest.java:285)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></failure>
+    <system-out><![CDATA[14:11:30.395 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with custom detector: null
+]]></system-out>
+  </testcase>
+  <testcase name="testLogMetricsWithoutStreams" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.001">
+    <system-out><![CDATA[14:11:30.400 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.400 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+  <testcase name="testParseTransactionWithValidJson" classname="com.slipstream.stream.AnomalyDetectionStreamsTest" time="0.003">
+    <error message="Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field &apos;com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS&apos;" type="java.lang.NoSuchFieldError"><![CDATA[java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreams.parseTransaction(AnomalyDetectionStreams.java:139)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithValidJson(AnomalyDetectionStreamsTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+]]></error>
+    <system-out><![CDATA[14:11:30.401 [main] INFO  c.s.d.StatisticalAnomalyDetector - Initialized Statistical Anomaly Detector with Z-score threshold 2.5, anomaly threshold 0.7
+14:11:30.401 [main] INFO  c.s.stream.AnomalyDetectionStreams - Initialized AnomalyDetectionStreams with detector: Statistical
+]]></system-out>
+  </testcase>
+</testsuite>

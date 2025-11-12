@@ -1,0 +1,132 @@
+-------------------------------------------------------------------------------
+Test set: com.slipstream.stream.AnomalyDetectionStreamsTest
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 4, Errors: 2, Skipped: 0, Time elapsed: 0.863 s <<< FAILURE! -- in com.slipstream.stream.AnomalyDetectionStreamsTest
+com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResultWithNullResult -- Time elapsed: 0.746 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <null> but was: <{"anomaly":false,"transaction_id":null,"is_anomaly":false,"anomaly_score":0.0,"confidence":0.0,"anomaly_type":null,"detected_at":null,"original_transaction":null,"features_used":{},"reason":null}>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertNull.failNotNull(AssertNull.java:50)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:35)
+	at org.junit.jupiter.api.AssertNull.assertNull(AssertNull.java:30)
+	at org.junit.jupiter.api.Assertions.assertNull(Assertions.java:279)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResultWithNullResult(AnomalyDetectionStreamsTest.java:273)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithInvalidJson -- Time elapsed: 0.026 s <<< ERROR!
+java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreams.parseTransaction(AnomalyDetectionStreams.java:139)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithInvalidJson(AnomalyDetectionStreamsTest.java:196)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResult -- Time elapsed: 0.004 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <true> but was: <false>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertTrue.failNotTrue(AssertTrue.java:63)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:36)
+	at org.junit.jupiter.api.AssertTrue.assertTrue(AssertTrue.java:31)
+	at org.junit.jupiter.api.Assertions.assertTrue(Assertions.java:183)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testSerializeAnomalyResult(AnomalyDetectionStreamsTest.java:251)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.slipstream.stream.AnomalyDetectionStreamsTest.testObjectMapperConfiguration -- Time elapsed: 0.006 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: Unexpected exception thrown: java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3168)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testObjectMapperConfiguration(AnomalyDetectionStreamsTest.java:294)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+Caused by: java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.lambda$testObjectMapperConfiguration$0(AnomalyDetectionStreamsTest.java:298)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 6 more
+
+com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel -- Time elapsed: 0.004 s <<< FAILURE!
+Wanted but not invoked:
+anomalyDetector.supportsOnlineLearning();
+-> at com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel(AnomalyDetectionStreamsTest.java:285)
+
+However, there was exactly 1 interaction with this mock:
+anomalyDetector.getDetectorName();
+-> at com.slipstream.stream.AnomalyDetectionStreams.<init>(AnomalyDetectionStreams.java:51)
+
+
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testOnlineLearningUpdateModel(AnomalyDetectionStreamsTest.java:285)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
+com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithValidJson -- Time elapsed: 0.003 s <<< ERROR!
+java.lang.NoSuchFieldError: Class com.fasterxml.jackson.annotation.JsonFormat$Feature does not have member field 'com.fasterxml.jackson.annotation.JsonFormat$Feature READ_DATE_TIMESTAMPS_AS_NANOSECONDS'
+	at com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer._withFormatOverrides(LocalDateTimeDeserializer.java:101)
+	at com.fasterxml.jackson.datatype.jsr310.deser.JSR310DateTimeDeserializerBase.createContextual(JSR310DateTimeDeserializerBase.java:121)
+	at com.fasterxml.jackson.databind.DeserializationContext.handlePrimaryContextualization(DeserializationContext.java:851)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.constructSettableProperty(BeanDeserializerFactory.java:924)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.addBeanProps(BeanDeserializerFactory.java:584)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.buildBeanDeserializer(BeanDeserializerFactory.java:277)
+	at com.fasterxml.jackson.databind.deser.BeanDeserializerFactory.createBeanDeserializer(BeanDeserializerFactory.java:151)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer2(DeserializerCache.java:436)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createDeserializer(DeserializerCache.java:371)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCache2(DeserializerCache.java:285)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache._createAndCacheValueDeserializer(DeserializerCache.java:265)
+	at com.fasterxml.jackson.databind.deser.DeserializerCache.findValueDeserializer(DeserializerCache.java:163)
+	at com.fasterxml.jackson.databind.DeserializationContext.findRootValueDeserializer(DeserializationContext.java:669)
+	at com.fasterxml.jackson.databind.ObjectMapper._findRootDeserializer(ObjectMapper.java:5030)
+	at com.fasterxml.jackson.databind.ObjectMapper._readMapAndClose(ObjectMapper.java:4900)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3846)
+	at com.fasterxml.jackson.databind.ObjectMapper.readValue(ObjectMapper.java:3814)
+	at com.slipstream.stream.AnomalyDetectionStreams.parseTransaction(AnomalyDetectionStreams.java:139)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at com.slipstream.stream.AnomalyDetectionStreamsTest.testParseTransactionWithValidJson(AnomalyDetectionStreamsTest.java:179)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:565)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1604)
+
